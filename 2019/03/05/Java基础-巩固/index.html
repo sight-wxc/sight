@@ -97,7 +97,8 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2013/12/iostream2xx.png">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/01/2243690-9cd9c896e0d512ed.gif">
-<meta property="og:updated_time" content="2019-03-05T03:40:21.928Z">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg">
+<meta property="og:updated_time" content="2019-03-05T07:47:20.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA基础-巩固">
 <meta name="twitter:description" content="##JAVA基础">
@@ -365,8 +366,62 @@ Java.io 包中的流支持很多种格式，比如：基本类型、对象、本
 对一个集合的扩展和适应必须是简单的。
 为此，整个集合框架就围绕一组标准接口而设计。你可以直接使用这些接口的标准实现，诸如： LinkedList, HashSet, 和 TreeSet 等,除此之外你也可以通过这些接口实现自己的集合。
 </code></pre><hr>
-<p><img src="http://www.runoob.com/wp-content/uploads/2014/01/2243690-9cd9c896e0d512ed.gif" alt=""><br>3.</p>
-
+<p><img src="http://www.runoob.com/wp-content/uploads/2014/01/2243690-9cd9c896e0d512ed.gif" alt=""></p>
+<h2 id="3-Java序列化"><a href="#3-Java序列化" class="headerlink" title="3.Java序列化"></a>3.Java序列化</h2><pre><code>Java 提供了一种对象序列化的机制，该机制中，一个对象可以被表示为一个字节序列，该字节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。
+将序列化对象写入文件之后，可以从文件中读取出来，并且对它进行反序列化，也就是说，对象的类型信息、对象的数据，还有对象中的数据类型可以用来在内存中新建对象。
+整个过程都是 Java 虚拟机（JVM）独立的，也就是说，在一个平台上序列化的对象可以在另一个完全不同的平台上反序列化该对象。
+类 ObjectInputStream 和 ObjectOutputStream 是高层次的数据流，它们包含反序列化和序列化对象的方法。
+ObjectOutputStream 类包含很多写方法来写各种数据类型，但是一个特别的方法例外：
+public final void writeObject(Object x) throws IOException
+上面的方法序列化一个对象，并将它发送到输出流。相似的 ObjectInputStream 类包含如下反序列化一个对象的方法：
+public final Object readObject() throws IOException, 
+                             ClassNotFoundException
+该方法从流中取出下一个对象，并将对象反序列化。它的返回值为Object，因此，你需要将它转换成合适的数据类型。
+</code></pre><p>4.Java 网络编程</p>
+<hr>
+<pre><code>网络编程是指编写运行在多个设备（计算机）的程序，这些设备都通过网络连接起来。
+java.net 包中 J2SE 的 API 包含有类和接口，它们提供低层次的通信细节。你可以直接使用这些类和接口，来专注于解决问题，而不用关注通信细节。
+java.net 包中提供了两种常见的网络协议的支持：
+TCP：TCP 是传输控制协议的缩写，它保障了两个应用程序之间的可靠通信。通常用于互联网协议，被称 TCP / IP。
+UDP：UDP 是用户数据报协议的缩写，一个无连接的协议。提供了应用程序之间要发送的数据的数据包。
+</code></pre><p>5.Socket 编程</p>
+<hr>
+<pre><code>套接字使用TCP提供了两台计算机之间的通信机制。 客户端程序创建一个套接字，并尝试连接服务器的套接字。
+当连接建立时，服务器会创建一个 Socket 对象。客户端和服务器现在可以通过对 Socket 对象的写入和读取来进行通信。
+java.net.Socket 类代表一个套接字，并且 java.net.ServerSocket 类为服务器程序提供了一种来监听客户端，并与他们建立连接的机制。
+以下步骤在两台计算机之间使用套接字建立TCP连接时会出现：
+服务器实例化一个 ServerSocket 对象，表示通过服务器上的端口通信。
+服务器调用 ServerSocket 类的 accept() 方法，该方法将一直等待，直到客户端连接到服务器上给定的端口。
+服务器正在等待时，一个客户端实例化一个 Socket 对象，指定服务器名称和端口号来请求连接。
+Socket 类的构造函数试图将客户端连接到指定的服务器和端口号。如果通信被建立，则在客户端创建一个 Socket 对象能够与服务器进行通信。
+在服务器端，accept() 方法返回服务器上一个新的 socket 引用，该 socket 连接到客户端的 socket。
+连接建立后，通过使用 I/O 流在进行通信，每一个socket都有一个输出流和一个输入流，客户端的输出流连接到服务器端的输入流，而客户端的输入流连接到服务器端的输出流。
+TCP 是一个双向的通信协议，因此数据可以通过两个数据流在同一时间发送.以下是一些类提供的一套完整的有用的方法来实现 socket
+</code></pre><h2 id="6-Java-多线程编程"><a href="#6-Java-多线程编程" class="headerlink" title="6.Java 多线程编程"></a>6.Java 多线程编程</h2><pre><code>Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。
+多线程是多任务的一种特别的形式，但多线程使用了更小的资源开销。
+这里定义和线程相关的另一个术语 - 进程：一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守护线程都结束运行后才能结束。
+多线程能满足程序员编写高效率的程序来达到充分利用 CPU 的目的。
+</code></pre><h2 id="7-一个线程的生命周期"><a href="#7-一个线程的生命周期" class="headerlink" title="7.一个线程的生命周期"></a>7.一个线程的生命周期</h2><pre><code>线程是一个动态执行的过程，它也有一个从产生到死亡的过程。
+下图显示了一个线程完整的生命周期。
+</code></pre><p><img src="http://www.runoob.com/wp-content/uploads/2014/01/java-thread.jpg" alt=""></p>
+<h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a>线程的优先级</h2><pre><code>每一个 Java 线程都有一个优先级，这样有助于操作系统确定线程的调度顺序。
+Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。
+默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。
+具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。
+</code></pre><h2 id="创建一个线程"><a href="#创建一个线程" class="headerlink" title="创建一个线程"></a>创建一个线程</h2><pre><code>Java 提供了三种创建线程的方法：
+通过实现 Runnable 接口；
+通过继承 Thread 类本身；
+通过 Callable 和 Future 创建线程
+</code></pre><h2 id="创建线程的三种方式的对比"><a href="#创建线程的三种方式的对比" class="headerlink" title="创建线程的三种方式的对比"></a>创建线程的三种方式的对比</h2><pre><code>1. 采用实现 Runnable、Callable 接口的方式创建多线程时，线程类只是实现了 Runnable 接口或 Callable 接口，还可以继承其他类。
+2. 使用继承 Thread 类的方式创建多线程时，编写简单，如果需要访问当前线程，则无需使用 Thread.currentThread() 方法，直接使用 this 即可获得当前线程。
+</code></pre><h2 id="线程的几个主要概念"><a href="#线程的几个主要概念" class="headerlink" title="线程的几个主要概念"></a>线程的几个主要概念</h2><pre><code>线程同步
+线程间通信
+线程死锁
+线程控制：挂起、停止和恢复
+</code></pre><h2 id="多线程的使用"><a href="#多线程的使用" class="headerlink" title="多线程的使用"></a>多线程的使用</h2><pre><code>有效利用多线程的关键是理解程序是并发执行而不是串行执行的。例如：程序中有两个子系统需要并发执行，这时候就需要利用多线程编程。
+通过对多线程的使用，可以编写出非常高效的程序。不过请注意，如果你创建太多的线程，程序执行的效率实际上是降低了，而不是提升了。
+请记住，上下文的切换开销也很重要，如果你创建了太多的线程，CPU 花费在上下文的切换的时间将多于执行程序的时间！
+</code></pre>
       
     </div>
     
@@ -408,6 +463,10 @@ Java.io 包中的流支持很多种格式，比如：基本类型、对象、本
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/05/Elasticsearch-开源搜索引擎/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -484,7 +543,7 @@ Java.io 包中的流支持很多种格式，比如：基本类型、对象、本
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -530,7 +589,7 @@ Java.io 包中的流支持很多种格式，比如：基本类型、对象、本
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Java序列化"><span class="nav-number">2.</span> <span class="nav-text">3.Java序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Java-多线程编程"><span class="nav-number">3.</span> <span class="nav-text">6.Java 多线程编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-一个线程的生命周期"><span class="nav-number">4.</span> <span class="nav-text">7.一个线程的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的优先级"><span class="nav-number">5.</span> <span class="nav-text">线程的优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个线程"><span class="nav-number">6.</span> <span class="nav-text">创建一个线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建线程的三种方式的对比"><span class="nav-number">7.</span> <span class="nav-text">创建线程的三种方式的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的几个主要概念"><span class="nav-number">8.</span> <span class="nav-text">线程的几个主要概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程的使用"><span class="nav-number">9.</span> <span class="nav-text">多线程的使用</span></a></li></ol></div>
             
 
           </div>
