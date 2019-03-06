@@ -87,13 +87,13 @@
 
 
 
-<meta name="description" content="###Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作: 分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。 实时分析的分布式搜索引擎。 可以扩展到上百台服务器，处理PB级别的">
+<meta name="description" content="Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:  分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。 实时分析的分布式搜索引擎。 可以扩展到上百台服务器，处理PB级别的结构">
 <meta name="keywords" content="Andorid ali blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elasticsearch 基础介绍及索引原理分析(转载-个人觉得有必要好好看下)">
-<meta property="og:url" content="http://sight-wxc.github.io/2019/03/05/Elasticsearch-开源搜索引擎/index.html">
+<meta property="og:url" content="http://sight-wxc.github.io/2019/03/06/Elasticsearch-开源搜索引擎/index.html">
 <meta property="og:site_name" content="sight个人博客">
-<meta property="og:description" content="###Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作: 分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。 实时分析的分布式搜索引擎。 可以扩展到上百台服务器，处理PB级别的">
+<meta property="og:description" content="Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:  分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。 实时分析的分布式搜索引擎。 可以扩展到上百台服务器，处理PB级别的结构">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/Neway6655/neway6655.github.com/master/images/elasticsearch-study/b-tree.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Neway6655/neway6655.github.com/master/images/elasticsearch-study/inverted-index.png">
@@ -104,10 +104,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Neway6655/neway6655.github.com/master/images/elasticsearch-study/Roaringbitmaps.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Neway6655/neway6655.github.com/master/images/elasticsearch-study/skiplist.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Neway6655/neway6655.github.com/master/images/elasticsearch-study/combineIndex.png">
-<meta property="og:updated_time" content="2019-03-06T11:15:41.332Z">
+<meta property="og:updated_time" content="2019-03-06T11:18:29.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch 基础介绍及索引原理分析(转载-个人觉得有必要好好看下)">
-<meta name="twitter:description" content="###Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作: 分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。 实时分析的分布式搜索引擎。 可以扩展到上百台服务器，处理PB级别的">
+<meta name="twitter:description" content="Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:  分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。 实时分析的分布式搜索引擎。 可以扩展到上百台服务器，处理PB级别的结构">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Neway6655/neway6655.github.com/master/images/elasticsearch-study/b-tree.png">
 
 
@@ -138,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://sight-wxc.github.io/2019/03/05/Elasticsearch-开源搜索引擎/"/>
+  <link rel="canonical" href="http://sight-wxc.github.io/2019/03/06/Elasticsearch-开源搜索引擎/"/>
 
 
 
@@ -258,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sight-wxc.github.io/2019/03/05/Elasticsearch-开源搜索引擎/">
+    <link itemprop="mainEntityOfPage" href="http://sight-wxc.github.io/2019/03/06/Elasticsearch-开源搜索引擎/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sight">
@@ -287,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-05T16:53:36+08:00">
-                2019-03-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-06T19:17:38+08:00">
+                2019-03-06
               </time>
             
 
@@ -358,13 +358,15 @@
       
 
       
-        <h2 id="Elasticsearch-是一个分布式可扩展的实时搜索和分析引擎-一个建立在全文搜索引擎-Apache-Lucene-TM-基础上的搜索引擎-当然-Elasticsearch-并不仅仅是-Lucene-那么简单，它不仅包括了全文搜索功能，还可以进行以下工作"><a href="#Elasticsearch-是一个分布式可扩展的实时搜索和分析引擎-一个建立在全文搜索引擎-Apache-Lucene-TM-基础上的搜索引擎-当然-Elasticsearch-并不仅仅是-Lucene-那么简单，它不仅包括了全文搜索功能，还可以进行以下工作" class="headerlink" title="###Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:"></a>###Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:</h2><ol>
+        <h3 id="Elasticsearch-是一个分布式可扩展的实时搜索和分析引擎-一个建立在全文搜索引擎-Apache-Lucene-TM-基础上的搜索引擎-当然-Elasticsearch-并不仅仅是-Lucene-那么简单，它不仅包括了全文搜索功能，还可以进行以下工作"><a href="#Elasticsearch-是一个分布式可扩展的实时搜索和分析引擎-一个建立在全文搜索引擎-Apache-Lucene-TM-基础上的搜索引擎-当然-Elasticsearch-并不仅仅是-Lucene-那么简单，它不仅包括了全文搜索功能，还可以进行以下工作" class="headerlink" title="Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:"></a>Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:</h3><hr>
+<ol>
 <li>分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。</li>
 <li>实时分析的分布式搜索引擎。</li>
 <li>可以扩展到上百台服务器，处理PB级别的结构化或非结构化数据。</li>
 </ol>
 <a id="more"></a>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="###基本概念"></a>###基本概念</h2><p>先说Elasticsearch的文件存储，Elasticsearch是面向文档型数据库，一条数据在这里就是一个文档，用JSON作为文档序列化的格式，比如下面这条用户数据：</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><hr>
+<p>先说Elasticsearch的文件存储，Elasticsearch是面向文档型数据库，一条数据在这里就是一个文档，用JSON作为文档序列化的格式，比如下面这条用户数据：</p>
 <pre><code>{
 &quot;name&quot; :     &quot;John&quot;,
 &quot;sex&quot; :      &quot;Male&quot;,
@@ -609,7 +611,7 @@ Elasticsearch  ⇒ 索引(Index)   ⇒ 类型(type)  ⇒ 文档(Docments)  ⇒ �
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Elasticsearch-是一个分布式可扩展的实时搜索和分析引擎-一个建立在全文搜索引擎-Apache-Lucene-TM-基础上的搜索引擎-当然-Elasticsearch-并不仅仅是-Lucene-那么简单，它不仅包括了全文搜索功能，还可以进行以下工作"><span class="nav-number">1.</span> <span class="nav-text">###Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">###基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新，查询也是类似这样的操作，具体操作手册可以参见Elasticsearch权威指南"><span class="nav-number">3.</span> <span class="nav-text">更新，查询也是类似这样的操作，具体操作手册可以参见Elasticsearch权威指南  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Elasticsearch是如何做到快速索引的"><span class="nav-number">4.</span> <span class="nav-text">###Elasticsearch是如何做到快速索引的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是B-Tree索引"><span class="nav-number">5.</span> <span class="nav-text">###什么是B-Tree索引?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Posting-List"><span class="nav-number">6.</span> <span class="nav-text">###Posting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Term-Dictionary"><span class="nav-number">7.</span> <span class="nav-text">###Term Dictionary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Term-Index"><span class="nav-number">8.</span> <span class="nav-text">###Term Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压缩技巧"><span class="nav-number">9.</span> <span class="nav-text">####压缩技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Roaring-bitmaps"><span class="nav-number">10.</span> <span class="nav-text">###Roaring bitmaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#联合索引"><span class="nav-number">11.</span> <span class="nav-text">###联合索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结和思考"><span class="nav-number">12.</span> <span class="nav-text">####总结和思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于最后一点，个人认为有多个因素"><span class="nav-number">13.</span> <span class="nav-text">###关于最后一点，个人认为有多个因素:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Elasticsearch-是一个分布式可扩展的实时搜索和分析引擎-一个建立在全文搜索引擎-Apache-Lucene-TM-基础上的搜索引擎-当然-Elasticsearch-并不仅仅是-Lucene-那么简单，它不仅包括了全文搜索功能，还可以进行以下工作"><span class="nav-number">1.</span> <span class="nav-text">Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新，查询也是类似这样的操作，具体操作手册可以参见Elasticsearch权威指南"><span class="nav-number"></span> <span class="nav-text">更新，查询也是类似这样的操作，具体操作手册可以参见Elasticsearch权威指南  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Elasticsearch是如何做到快速索引的"><span class="nav-number"></span> <span class="nav-text">###Elasticsearch是如何做到快速索引的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是B-Tree索引"><span class="nav-number"></span> <span class="nav-text">###什么是B-Tree索引?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Posting-List"><span class="nav-number"></span> <span class="nav-text">###Posting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Term-Dictionary"><span class="nav-number"></span> <span class="nav-text">###Term Dictionary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Term-Index"><span class="nav-number"></span> <span class="nav-text">###Term Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压缩技巧"><span class="nav-number"></span> <span class="nav-text">####压缩技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Roaring-bitmaps"><span class="nav-number"></span> <span class="nav-text">###Roaring bitmaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#联合索引"><span class="nav-number"></span> <span class="nav-text">###联合索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结和思考"><span class="nav-number"></span> <span class="nav-text">####总结和思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于最后一点，个人认为有多个因素"><span class="nav-number"></span> <span class="nav-text">###关于最后一点，个人认为有多个因素:</span></a></div>
             
 
           </div>
