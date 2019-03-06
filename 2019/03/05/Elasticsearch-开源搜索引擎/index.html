@@ -104,7 +104,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Neway6655/neway6655.github.com/master/images/elasticsearch-study/Roaringbitmaps.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Neway6655/neway6655.github.com/master/images/elasticsearch-study/skiplist.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Neway6655/neway6655.github.com/master/images/elasticsearch-study/combineIndex.png">
-<meta property="og:updated_time" content="2019-03-06T09:54:33.575Z">
+<meta property="og:updated_time" content="2019-03-06T11:15:41.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch 基础介绍及索引原理分析(转载-个人觉得有必要好好看下)">
 <meta name="twitter:description" content="###Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作: 分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。 实时分析的分布式搜索引擎。 可以扩展到上百台服务器，处理PB级别的">
@@ -363,6 +363,7 @@
 <li>实时分析的分布式搜索引擎。</li>
 <li>可以扩展到上百台服务器，处理PB级别的结构化或非结构化数据。</li>
 </ol>
+<a id="more"></a>
 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="###基本概念"></a>###基本概念</h2><p>先说Elasticsearch的文件存储，Elasticsearch是面向文档型数据库，一条数据在这里就是一个文档，用JSON作为文档序列化的格式，比如下面这条用户数据：</p>
 <pre><code>{
 &quot;name&quot; :     &quot;John&quot;,
