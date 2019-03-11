@@ -87,18 +87,21 @@
 
 
 
-<meta name="description" content="这东西还要必须啃到 死磕到底！！记录自己看源码心得 体会吧~">
+<meta name="description" content="Dubbo是什么  一款分布式服务框架 高性能和透明化的RPC远程服务调用方案 SOA服务治理方案  每天为2千多个服务提供大于30亿次访问量支持，并被广泛应用于阿里巴巴集团的各成员站点以及别的公司的业务中。">
 <meta name="keywords" content="Andorid ali blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开始看Android源码-死啃">
-<meta property="og:url" content="http://sight-wxc.github.io/2018/08/17/开始看Android源码-死啃/index.html">
+<meta property="og:title" content="Dubbo是什么">
+<meta property="og:url" content="http://sight-wxc.github.io/2019/03/11/dubbo初次使用体会基础/index.html">
 <meta property="og:site_name" content="sight个人博客">
-<meta property="og:description" content="这东西还要必须啃到 死磕到底！！记录自己看源码心得 体会吧~">
+<meta property="og:description" content="Dubbo是什么  一款分布式服务框架 高性能和透明化的RPC远程服务调用方案 SOA服务治理方案  每天为2千多个服务提供大于30亿次访问量支持，并被广泛应用于阿里巴巴集团的各成员站点以及别的公司的业务中。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-20T02:40:56.810Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20170417184119640?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbm9hbWFuX3dncw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img-blog.csdn.net/20170417185019149?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbm9hbWFuX3dncw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2019-03-11T09:12:05.786Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开始看Android源码-死啃">
-<meta name="twitter:description" content="这东西还要必须啃到 死磕到底！！记录自己看源码心得 体会吧~">
+<meta name="twitter:title" content="Dubbo是什么">
+<meta name="twitter:description" content="Dubbo是什么  一款分布式服务框架 高性能和透明化的RPC远程服务调用方案 SOA服务治理方案  每天为2千多个服务提供大于30亿次访问量支持，并被广泛应用于阿里巴巴集团的各成员站点以及别的公司的业务中。">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20170417184119640?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbm9hbWFuX3dncw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -128,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://sight-wxc.github.io/2018/08/17/开始看Android源码-死啃/"/>
+  <link rel="canonical" href="http://sight-wxc.github.io/2019/03/11/dubbo初次使用体会基础/"/>
 
 
 
 
 
-  <title>开始看Android源码-死啃 | sight个人博客</title>
+  <title>Dubbo是什么 | sight个人博客</title>
   
 
 
@@ -248,7 +251,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sight-wxc.github.io/2018/08/17/开始看Android源码-死啃/">
+    <link itemprop="mainEntityOfPage" href="http://sight-wxc.github.io/2019/03/11/dubbo初次使用体会基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sight">
@@ -265,7 +268,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">开始看Android源码-死啃</h1>
+          <h1 class="post-title" itemprop="name headline">Dubbo是什么</h1>
         
 
         <div class="post-meta">
@@ -277,8 +280,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T15:50:03+08:00">
-                2018-08-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T17:11:39+08:00">
+                2019-03-11
               </time>
             
 
@@ -348,12 +351,105 @@
       
 
       
-        <p>这东西还要必须啃到 死磕到底！！<br>记录自己看源码心得 体会吧~<br><a id="more"></a></p>
-<h1 id="第一步-下载源码-安装编译环境"><a href="#第一步-下载源码-安装编译环境" class="headerlink" title="第一步 下载源码 安装编译环境"></a>第一步 下载源码 安装编译环境</h1><ul>
-<li>安装 vmare ubunto</li>
-<li>下载android 源码 估计要余留40G空间</li>
-<li>编译android 源码</li>
-<li>可以查看核心层和应用层源码</li>
+        <h3 id="Dubbo是什么"><a href="#Dubbo是什么" class="headerlink" title="Dubbo是什么"></a>Dubbo是什么</h3><hr>
+<ul>
+<li>一款分布式服务框架</li>
+<li>高性能和透明化的RPC远程服务调用方案</li>
+<li>SOA服务治理方案</li>
+</ul>
+<p>每天为2千多个服务提供大于<strong>30亿次访问量</strong>支持，并被广泛应用于<strong>阿里巴巴集团</strong>的各成员站点以及别的公司的业务中。<br><a id="more"></a></p>
+<h3 id="电商系统的演变可以看出架构演变的过程"><a href="#电商系统的演变可以看出架构演变的过程" class="headerlink" title="电商系统的演变可以看出架构演变的过程"></a>电商系统的演变可以看出架构演变的过程</h3><hr>
+<p><img src="https://img-blog.csdn.net/20170417184119640?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbm9hbWFuX3dncw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<ul>
+<li>单一应用架构<ul>
+<li>-当网站流量很小时，只需一个应用，将所有功能都部署在一起，以减少部署节点和成本。</li>
+<li><ul>
+<li>此时，用于简化增删改查工作量的 数据访问框架(ORM) 是关键。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>垂直应用架构<ul>
+<li><ul>
+<li>当访问量逐渐增大，单一应用增加机器带来的加速度越来越小，将应用拆成互不相干的几个应用，以提升效率。</li>
+</ul>
+</li>
+<li><ul>
+<li>此时，用于加速前端页面开发的 Web框架(MVC) 是关键。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分布式服务架构<ul>
+<li><ul>
+<li>当垂直应用越来越多，应用之间交互不可避免，将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，使前端应用能更快速的响应多变的市场需求。</li>
+</ul>
+</li>
+<li><ul>
+<li>此时，用于提高业务复用及整合的 分布式服务框架(RPC) 是关键。  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>流动计算架构<ul>
+<li><ul>
+<li>当服务越来越多，容量的评估，小服务资源的浪费等问题逐渐显现，此时需增加一个调度中心基于访问压力实时管理集群容量，提高集群利用率。</li>
+</ul>
+</li>
+<li><ul>
+<li>此时，用于提高机器利用率的 资源调度和治理中心(SOA) 是关键。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="RPC的简介"><a href="#RPC的简介" class="headerlink" title="RPC的简介"></a>RPC的简介</h3><hr>
+<p>在这里插播一条关于RPC的简介： </p>
+<p>RPC(Remote Procedure Call Protocol)：远程过程调用：<br>两台服务器A、B，分别部署不同的应用a,b。当A服务器想要调用B服务器上应用b提供的函数或方法的时候，由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义传达调用的数据。<br>说白了，就是你在你的机器上写了一个程序，我这边是无法直接调用的，这个时候就出现了一个远程服务调用的概念。</p>
+<pre><code>RPC是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。 
+RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息到达为止。当一个调用信息到达，服务器获得进程参数，计算结果，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。
+</code></pre><h3 id="SOA的简介"><a href="#SOA的简介" class="headerlink" title="SOA的简介"></a>SOA的简介</h3><hr>
+<p>SOA是什么？SOA全英文是Service-Oriented Architecture，中文意思是中文面向服务编程，是一种思想，一种方法论，一种分布式的服务架构（具体可以百度）。</p>
+<pre><code>用途：SOA解决多服务凌乱问题，SOA架构解决数据服务的复杂程度，同时SOA又有一个名字，叫做服务治理。
+</code></pre><p>可以看下这篇大佬文章，通俗易懂 <a href="https://www.cnblogs.com/renzhitian/p/6853289.html" target="_blank" rel="noopener">《深入浅出SOA》</a></p>
+<h3 id="ORM的简介"><a href="#ORM的简介" class="headerlink" title="ORM的简介"></a>ORM的简介</h3><hr>
+<p>即Object-Relationl Mapping，它的作用是在关系型数据库和对象之间作一个映射，这样，我们在具体的操作数据库的时候，就不需要再去和复杂的SQL语句打交道，只要像平时操作对象一样操作它就可以了 。<br>可以看下这篇大佬文章，通俗易懂 <a href="https://blog.csdn.net/songyuxinit/article/details/81331339" target="_blank" rel="noopener">《什么是ORM?为啥要是用ORM》</a></p>
+<h3 id="Dubbo架构"><a href="#Dubbo架构" class="headerlink" title="Dubbo架构"></a>Dubbo架构</h3><hr>
+<p><img src="https://img-blog.csdn.net/20170417185019149?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbm9hbWFuX3dncw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>Provider: 暴露服务的服务提供方。<br>Consumer: 调用远程服务的服务消费方。<br>Registry: 服务注册与发现的注册中心。<br>Monitor: 统计服务的调用次数和调用时间的监控中心。</p>
+<p>调用流程<br>0.服务容器负责启动，加载，运行服务提供者。<br>1.服务提供者在启动时，向注册中心注册自己提供的服务。<br>2.服务消费者在启动时，向注册中心订阅自己所需的服务。<br>3.注册中心返回服务提供者地址列表给消费者，如果有变更，注册中心将基于长连接推送变更数据给消费者。<br>4.服务消费者，从提供者地址列表中，基于软负载均衡算法，选一台提供者进行调用，如果调用失败，再选另一台调用。<br>5.服务消费者和提供者，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心</p>
+<h3 id="Dubbo注册中心"><a href="#Dubbo注册中心" class="headerlink" title="Dubbo注册中心"></a>Dubbo注册中心</h3><hr>
+<p>对于服务提供方，它需要发布服务，而且由于应用系统的复杂性，服务的数量、类型也不断膨胀；<br>对于服务消费方，它最关心如何获取到它所需要的服务，而面对复杂的应用系统，需要管理大量的服务调用。<br>而且，对于服务提供方和服务消费方来说，他们还有可能兼具这两种角色，即既需要提供服务，有需要消费服务。</p>
+<p>通过将服务统一管理起来，可以有效地优化内部应用对服务发布/使用的流程和管理。服务注册中心可以通过特定协议来完成服务对外的统一。<br><strong>Dubbo提供的注册中心有如下几种类型可供选择：</strong></p>
+<ul>
+<li>Multicast注册中心</li>
+<li>Zookeeper注册中心</li>
+<li>Redis注册中心</li>
+<li>Simple注册中心</li>
+</ul>
+<h3 id="Dubbo优缺点"><a href="#Dubbo优缺点" class="headerlink" title="Dubbo优缺点"></a>Dubbo优缺点</h3><hr>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>透明化的远程方法调用 <ul>
+<li>像调用本地方法一样调用远程方法；只需简单配置，没有任何API侵入。</li>
+</ul>
+</li>
+<li>软负载均衡及容错机制 <ul>
+<li>可在内网替代nginx lvs等硬件负载均衡器。</li>
+</ul>
+</li>
+<li>服务注册中心自动注册 &amp; 配置管理 <ul>
+<li>不需要写死服务提供者地址，注册中心基于接口名自动查询提供者ip。<br>使用类似zookeeper等分布式协调服务作为服务注册中心，可以将绝大部分项目配置移入zookeeper集群。</li>
+</ul>
+</li>
+<li>服务接口监控与治理 <ul>
+<li>Dubbo-admin与Dubbo-monitor提供了完善的服务接口管理与监控功能，针对不同应用的不同接口，可以进行 多版本，多协议，多注册中心管理。</li>
+</ul>
+</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>只支持JAVA语言</li>
 </ul>
 
       
@@ -388,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/17/small-delpoy/" rel="next" title="small-delpoy">
-                <i class="fa fa-chevron-left"></i> small-delpoy
+              <a href="/2019/03/05/Elasticsearch-开源搜索引擎/" rel="next" title="Elasticsearch 基础介绍及索引原理分析(转载-个人觉得有必要好好看下)">
+                <i class="fa fa-chevron-left"></i> Elasticsearch 基础介绍及索引原理分析(转载-个人觉得有必要好好看下)
               </a>
             
           </div>
@@ -397,10 +493,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/11/国庆反思/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一步-下载源码-安装编译环境"><span class="nav-number">1.</span> <span class="nav-text">第一步 下载源码 安装编译环境</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dubbo是什么"><span class="nav-number">1.</span> <span class="nav-text">Dubbo是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电商系统的演变可以看出架构演变的过程"><span class="nav-number">2.</span> <span class="nav-text">电商系统的演变可以看出架构演变的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RPC的简介"><span class="nav-number">3.</span> <span class="nav-text">RPC的简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOA的简介"><span class="nav-number">4.</span> <span class="nav-text">SOA的简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ORM的简介"><span class="nav-number">5.</span> <span class="nav-text">ORM的简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dubbo架构"><span class="nav-number">6.</span> <span class="nav-text">Dubbo架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dubbo注册中心"><span class="nav-number">7.</span> <span class="nav-text">Dubbo注册中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dubbo优缺点"><span class="nav-number">8.</span> <span class="nav-text">Dubbo优缺点</span></a></li></ol></div>
             
 
           </div>
